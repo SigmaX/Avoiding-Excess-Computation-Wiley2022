@@ -1,6 +1,6 @@
 # Avoiding Excess Computation in Asynchronous Evolutionary Algorithms
 
-This repo contains code for part of the experiments described in our 2021 paper,
+This repo contains code for part of the experiments described in our 2022 paper,
 
  - Eric O. Scott, Mark Coletti, Catherine D. Schuman, Bill Kay, Shruti R. Kulkarni, Maryma Parsa, Cathika Gunaratne, and Kenneth A. De Jong.  "Avoiding Excess Computation in Asynchronous Evolutionary Algorithms," _Expert Systems_ (Wiley), 2022.
 
