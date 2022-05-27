@@ -1,0 +1,12 @@
+# debug.yaml
+#
+# Contains debug overrides over config.yaml
+#
+# Tiny populations and max generations
+#
+# gremlin.py -d config.yaml debug.yaml
+#
+pop_size: 2
+max_generations: 1
+k_elites: 1
+pop_file: debug_pop.csv # where we will write out each generation in CSV format

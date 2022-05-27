@@ -1,0 +1,6 @@
+Results of synchronous, asynchronous, and asynchronous-with-SWEET EAs running
+on the F1Tenth problem.
+
+These improve on the earlier "2021-06-14_new_results" (which we published
+our UKCI paper on) by fixing the LIDAR sensor on the vehicle.  It was 
+accidentally configured to point backwards in the previous experiment.

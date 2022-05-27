@@ -1,0 +1,25 @@
+# Gremlin config file for OpenAI Gym CartPole benchmark
+#
+# Modified to use new Gremlin ASEA support.
+#
+# Usage:
+#     $ gremlin.py config.yaml
+pop_size: 25
+algorithm: async
+async: # parameters for asynchronous steady-state EA
+  init_pop_size: ${pop_size}
+  max_births: 2000
+  ind_file: inds.csv # optional file for writing individuals as they are evaluated
+  ind_file_probe: probe.log_ind # optional functor or function for writing ind_file
+#  scheduler_file: scheduler_file.json
+
+pop_file: pop.csv # where we will write out each generation in CSV format
+problem: problem.QLearnerBalanceProblem("${env:GREMLIN_QLEARNER_CARTPOLE_MODEL_FPATH}")
+representation: representation.BalanceRepresentation()
+imports:
+  - probe # need to import our probe.py so that LEAP sees our probe pipeline operator
+pipeline: # isotropic means we mutate all genes with the given stds
+  # - ops.random_selection selection handled in sweet_gremlin
+  - ops.clone
+  - mutate_gaussian(expected_num_mutations='isotropic', std=[0.1, 0.001, 0.01, 0.001], hard_bounds=representation.BalanceRepresentation.genome_bounds)
+  - ops.pool(size=1)
